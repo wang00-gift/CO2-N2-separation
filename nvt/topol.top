@@ -1,0 +1,21 @@
+
+; Include forcefield parameters
+#include "forcefield/forcefield.itp"
+#include "forcefield/cof.itp"
+#include "forcefield/apmim.itp"
+#include "forcefield/br.itp"
+#include "forcefield/CO2.itp"
+#include "forcefield/N2.itp"
+
+[ system ]
+; Name
+COF-IL
+
+[ molecules ]
+;Compound        #mols
+COF                10
+BR                240
+NSC               40
+NSA               40 
+CO2               100
+N2                100

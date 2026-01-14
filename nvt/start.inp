@@ -1,0 +1,18 @@
+tolerance 2.0
+output md.pdb
+structure del.pdb
+number 1
+fixed 0. 0. 0. 0. 0. 0.
+end structure
+structure CO2.pdb
+number 100
+inside box 5. 5. 5. 90. 50. 60.
+end structure
+structure N2.pdb
+number 100
+inside box 5. 5. 5. 90. 50. 60.
+end structure
+
+
+
+

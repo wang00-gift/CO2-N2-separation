@@ -1,0 +1,67 @@
+title		= KALP15-DPPC Production MD 
+define                   = -DPOSRES
+; Run parameters
+integrator	= md		; leap-frog integrator
+nsteps		= 200000  	; 1 * 200000 = 200 ps 
+dt		    = 0.001		; 1 fs
+; Output control
+nstxout     = 0         ; suppress .trr output
+nstvout     = 0         ; suppress .trr output
+nstenergy   = 1000      ; save energies every 1 ps
+nstlog      = 1000      ; update log file every 1 ps
+nstxtcout   = 1000      ; write .xtc trajectory every 1 ps
+energygrps  = 
+; Bond parameters
+continuation	= no		    ; Restarting after NPT 
+constraint_algorithm = lincs	; holonomic constraints 
+constraints	= h-bonds	        ; all bonds (even heavy atom-H bonds) constrained
+lincs_iter	= 1		            ; accuracy of LINCS
+lincs_order	= 4		            ; also related to accuracy
+; Neighborsearching
+ns_type		= grid		; search neighboring grid cels
+nstlist		= 10		    ; 10 fs
+rlist		= 1.2		; short-range neighborlist cutoff (in nm)
+rcoulomb	= 1.2		; short-range electrostatic cutoff (in nm)
+rvdw		= 1.2		; short-range van der Waals cutoff (in nm)
+; Electrostatics
+coulombtype	= PME		; Particle Mesh Ewald for long-range electrostatics
+pme_order	= 4		    ; cubic interpolation
+fourierspacing	= 0.16		; grid spacing for FFT
+; Temperature coupling is on
+tcoupl		= Nose-Hoover		    ; More accurate thermostat
+tc-grps         = System 	; three coupling groups - more accurate
+tau_t		= 0.2 	        ; time constant, in ps
+ref_t		= 298      ; reference temperature, one for each group, in K
+;electronic filed
+; Pressure coupling is on
+pcoupl		= no	    ; Pressure coupling on in NPT
+pcoupltype	= semiisotropic		    ; uniform scaling of x-y box vectors, independent z
+tau_p		= 2.0			        ; time constant, in ps
+ref_p		= 1.0	1.0		        ; reference pressure, x-y, z (in bar)
+compressibility = 4.5e-5	4.5e-5	; isothermal compressibility, bar^-1
+; Periodic boundary conditions
+pbc                 = xy                ; 3-D PBC
+ewald_geometry    = 3dc
+nwall        = 2
+wall_type    = 9-3
+wall_r_linpot    = -1
+wall_atomtype   = SiO2  SiO2
+wall_density    = 200 200
+wall_ewald_zfac    = 3
+
+; Dispersion correction
+DispCorr	= EnerPres	; account for cut-off vdW scheme
+; Velocity generation
+gen_vel		= yes		; Velocity generation is off
+gen_temp        = 300       ; temperature for Maxwell distribution
+gen_seed        = -1        ; generate a random seed
+
+
+
+; Non-equilibrium MD stuff
+freezegrps               = COF    
+freezedim                = Y Y Y 
+
+;acceleration 
+
+

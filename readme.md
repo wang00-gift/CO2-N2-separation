@@ -1,0 +1,4 @@
+This simulation is designed to run under Gromacs-2019.6. Before execution, please ensure the relevant script paths and parameters are correctly configured.
+
+First, build the model. Use Packmol to add 100 CO2 and 100 N2 molecules in the feed side,perform energy minimization first, and then run a 1 ns NVT process to obtain 1.gro. 
+Select the gas molecule closest to both ends of the membrane, and use their z coordinates as the coordinates for local_zr and local_zl in the CGMD-3.py file. Rename 1.gro to start.gro. Adjust the parameters in CGMD-3.py as well as the path in 55-gaijin.sh, then run the script to start the simulation.

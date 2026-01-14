@@ -1,0 +1,17 @@
+[ moleculetype ]
+; molname	nrexcl
+N2		2
+
+[ atoms ]
+; id  at type     res nr  res name  at name  cg nr  charge    mass
+  1   N21            1       N2       N11     1    -0.482    14.007
+  2   N21            1       N2       N21     1    -0.482    14.007
+  3   MW            1       N2       MW      1     0.964     0.00000
+
+[ constraints ]
+1   2   1   0.110
+
+[ virtual_sites2 ]
+; Site  from        funct  a
+3       1     2     1      0.5
+

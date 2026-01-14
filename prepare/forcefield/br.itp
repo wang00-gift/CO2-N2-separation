@@ -1,0 +1,17 @@
+[ moleculetype ]
+; name          nrexcl
+NSA               3
+
+[ atoms ]
+;  Index   type   residue  resname   atom        cgnr     charge       mass
+     1     br         1      NSA     Br1           1       -1        79.903528
+
+[ moleculetype ]
+; molname   nrexcl
+BR          1
+
+[ atoms ]
+; id    at type     res nr  residu name at name  cg nr  charge   mass
+1       br-1    1       BR          Br       1      -1       79.904
+
+
